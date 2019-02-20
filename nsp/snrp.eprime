@@ -1,0 +1,47 @@
+language ESSENCE' 1.0
+
+$num of nurses
+given n_nurses : int
+$num of days
+given n_days :  int
+$num of shift types
+given n_shift_types : int
+
+given covers : matrix indexed by [int(1..n_days*n_shift_types)] of int
+given prefes : matrix indexed by [int(1..n_nurses*n_days*n_shift_types)] of int
+
+given max_covers : int
+given t_covers : int
+
+given ub : int
+
+$letting min_turns=5
+$letting max_turns=5
+
+
+find nurses_days : matrix indexed by [int(1..n_nurses*n_days)] of int (1..n_shift_types)
+$find  t_nur : matrix indexed by [int(1..n_nurses)] of int(min_turns..max_turns)
+
+
+such that
+
+
+(sum n : int(1..n_nurses).
+sum d : int(1..n_days).
+sum st :  int(1..n_shift_types).
+	(nurses_days[(n-1)*n_days + d]=st) * prefes[(n-1)*n_days*n_shift_types + (d-1)*n_shift_types + st]) <= ub,
+
+$last shift_type value is the free shift
+$coverage
+forAll d : int(1..n_days).
+	forAll st : int(1..n_shift_types).
+		sum([nurses_days[(n-1)*n_days+d]=st | n : int(1..n_nurses)]) >=covers[(d-1)*n_shift_types+st],
+
+
+$make minimum and maximum number of turns
+$The instance is for instances with 5 turns per nurse
+forAll n  : int(1..n_nurses).
+	sum([nurses_days[(n-1)*n_days+d]!=n_shift_types | d : int(1..n_days) ]) = 5
+
+
+

@@ -1,0 +1,30 @@
+language ESSENCE' 1.0
+
+given nBids : int  $ Number of bids
+given nItems : int $ Number of items
+
+
+given profit : matrix indexed by [int(1..nBids)] of int   $ Profit
+
+given bidHasItem : matrix indexed by [int(1..nBids),int(1..nItems)] of bool   $ Requests
+
+given incompatibleBids : matrix indexed by [int(1..nBids),int(1..nBids)] of bool $True iff both bids contain a same item
+
+given lb : int $ LB on the value
+
+
+$Find which bids are sold
+find sold : matrix indexed by [int(1..nBids)] of bool
+
+
+such that
+
+
+$Model 1: mutexes
+forAll b1: int(1..nBids-1) .
+	forAll b2: int (b1+1..nBids) .
+  		incompatibleBids[b1,b2] -> (!sold[b1] \/ !sold[b2]),
+
+
+$Objective
+(sum b : int(1..nBids). sold[b] * profit[b]) >= lb

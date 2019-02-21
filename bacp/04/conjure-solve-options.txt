@@ -1,0 +1,9 @@
+savilerowOptions: -sat-pb-mdd -sat-sum-mdd -amo-detect -timelimit 300000
+solverTimeLimit: 1200
+solverNodeLimit: 0
+solverMinTime: 30
+solverMinNode: 0
+solverTimeLimitPrefix: -cpu-lim=
+solverNodeLimitPrefix: 
+solverFlags: -mem-lim=5120 -rnd-seed=123
+solver: glucose

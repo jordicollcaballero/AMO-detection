@@ -1,0 +1,6 @@
+Each folder contains a set of instances and detailed information:
+
+- params: Essence param files for the instances
+- info.csv: detailed information of each instance (Savilerow time, glucose solving time, ..., some information is not really meaningful, as they are made for other solvers than glucose)
+- SR-info: *.eprime-info files given by Savilerow
+- conjure-solve-options.txt: Savilerow options, glucose options for the tuning

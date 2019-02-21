@@ -1,0 +1,9 @@
+SolverTotalTime:11.2164
+SolverMemOut:0
+SATClauses:1738135
+SavileRowClauseOut:0
+SavileRowTotalTime:62.4
+SolverSatisfiable:1
+SavileRowTimeOut:0
+SolverTimeOut:0
+SATVars:448044

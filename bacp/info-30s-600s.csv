@@ -1,0 +1,16 @@
+instance,SRTimeOut,SRTime,solverMemOut,solverTimeOut,solverTime,sat
+01/params/inst-57-1-1139903203.param,0,8.169,0,0,481.996,yes
+01/params/inst-57-1-2050821110.param,0,7.965,0,0,48.3837,yes
+01/params/inst-57-1-823094821.param,0,7.78,0,0,71.8853,yes
+02/params/inst-216-1-714733111.param,0,5.897,0,0,208.876,yes
+02/params/inst-369-1-1037025002.param,0,105.125,0,0,141.665,yes
+02/params/inst-749-1-2049716937.param,0,10.646,0,0,33.7421,yes
+02/params/inst-774-1-2049716937.param,0,24.211,0,0,504.949,yes
+03/params/inst-397-1-1058338582.param,0,36.107,0,0,280.661,yes
+03/params/inst-427-1-1058338582.param,0,124.2,0,0,56.2379,yes
+03/params/inst-427-1-960833342.param,0,124.114,0,0,63.2258,yes
+03/params/inst-538-1-1058338582.param,0,58.397,0,0,232.015,yes
+03/params/inst-538-1-960833342.param,0,55.814,0,0,392.588,yes
+03/params/inst-621-1-1058338582.param,0,200.892,0,0,39.5675,yes
+04/params/inst-145-1-156838369.param,0,1.214,0,0,227.491,yes
+04/params/inst-145-1-861278587.param,0,1.162,0,0,697.896,yes

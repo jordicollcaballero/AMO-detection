@@ -1,0 +1,21 @@
+language ESSENCE' 1.0
+
+letting n_courses be 35
+letting n_periods be 17
+letting prerequisite_RelationAsSet_Explicit_1 be
+        [1, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6, 6, 7, 8, 8, 9, 10, 10, 10, 10, 12, 13, 17, 18, 19, 19, 20, 26, 26, 27;
+             int(1..32)]
+letting prerequisite_RelationAsSet_Explicit_2 be
+        [24, 13, 14, 24, 27, 28, 14, 15, 21, 22, 19, 25, 17, 18, 16, 14, 23, 12, 11, 12, 20, 26, 29, 31, 35, 29, 30, 31,
+         33, 32, 34, 30;
+             int(1..32)]
+letting course_load_Function1D be
+        [5, 3, 6, 5, 6, 3, 3, 7, 8, 4, 2, 3, 2, 7, 2, 4, 5, 2, 2, 7, 7, 3, 4, 4, 2, 4, 4, 3, 2, 3, 8, 3, 2, 6, 8;
+             int(1..35)]
+letting load_per_period_ub be 37
+letting load_per_period_lb be 10
+letting courses_per_period_ub be 5
+letting courses_per_period_lb be 2
+letting fin1 be 32
+letting fin2 be 35
+letting fin3 be 8

@@ -1,0 +1,19 @@
+#!/bin/sh
+B=`basename $0`
+EP="$B.eprime"
+IP=$1
+b=`basename $1 .param`
+F="$B-$b"
+EPP="$F.eprime.param"
+OF="$F.out"
+rnd=`perl -e 'print rand(100000)'`
+
+cp /dev/null "$OF"
+echo 'conjure' | tee -a "$OF"
+conjure translate-param --eprime "$EP" --essence-param "$IP" --eprime-param "$EPP" 2>&1 | tee -a "$OF"
+echo "random seed: $rnd" | tee -a "$OF"
+echo 'savilerow' | tee -a "$OF"
+/usr/bin/time savilerow -sat -in-eprime "$EP" -in-param "$EPP" -solutions-to-stdout -sat-pb-mdd -sat-sum-mdd -run-solver -solver-options "-cpu-lim=1800 -rnd-seed=$rnd" 2>&1 | tee -a "$OF"
+echo 'savilerow-amo' | tee -a "$OF"
+/usr/bin/time savilerow -sat -in-eprime "$EP" -in-param "$EPP" -solutions-to-stdout -sat-pb-mdd -sat-sum-mdd -amo-detect -minion-bin minion-amo -run-solver -solver-options "-cpu-lim=1800 -rnd-seed=$rnd" 2>&1 | tee -a "$OF"
+

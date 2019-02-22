@@ -1,0 +1,40 @@
+language ESSENCE' 1.0
+
+given nClasses : int  $ Number of bids
+given nDimensions : int $ Number of items
+given classSize : int $ Size of each class
+
+given weight : matrix indexed by [int(1..nClasses),int(1..classSize),int(1..nDimensions)] of int $ weights
+
+given capacity : matrix indexed by [int(1..nDimensions)] of int $capacity of each dimension
+
+given profit : matrix indexed by [int(1..nClasses),int(1..classSize)] of int  $ Profit
+
+given lb : int $ LB on the value
+
+$Find which item of each class is packed
+find item : matrix indexed by [int(1..nClasses)] of int(1..classSize)
+
+$maximising (sum c : int (1..nClasses) .
+$	sum i : int(1..classSize).
+$		(item[c]=i) * profit[c,i])
+
+
+such that
+
+$Respect capacities
+
+forAll d: int(1..nDimensions) .
+	(sum c : int (1..nClasses) .
+		sum i : int(1..classSize).
+			(item[c]=i) * weight[c,i,d])
+	<= capacity[d],
+
+
+$Objective
+(sum c : int (1..nClasses) .
+	sum i : int(1..classSize).
+		(item[c]=i) * profit[c,i])
+>= lb,
+
+true

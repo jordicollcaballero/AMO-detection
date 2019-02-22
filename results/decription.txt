@@ -1,0 +1,6 @@
+Each folder contains the execution with a different random seed.
+Timeout is 600 seconds
+
+The columns contain, in this order:
+
+instance_name;SOLVED/TIMEOUT;savile_row_time;solver_time;total;time;n_bool_vars;n_clauses
